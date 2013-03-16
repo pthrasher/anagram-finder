@@ -2,10 +2,14 @@ Anagram Finder
 ==============
 
 short.txt == curl -sL http://thumb.tk/8Qdr
+
 medium.txt == curl -sL http://thumb.tk/8Pyn
+
 large.txt == curl -sL http://thumb.tk/8Qd3
 
 Results from each run found in respective `.out` file.
+
+
 
 The python app supports two optional command-line arguments.
 
