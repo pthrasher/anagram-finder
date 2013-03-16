@@ -48,7 +48,8 @@ def find_matches(bigrams, minlen=2):
 
         all_matches[hashed].add(tuple(bigram_set))
 
-    return [value for key, value in all_matches.items() if len(value) >= minlen]
+    return [value for key, value in all_matches.items()
+            if len(value) >= minlen]
 
 
 def print_matches(matches):
@@ -60,21 +61,24 @@ def print_matches(matches):
 
 
 def main(text, wordlen=4, minpairlen=2):
-    _text = text
-    text = re.sub(r'[^a-z0-9]+', ' ',
-                text.lower())
-    words = sorted([word for word in set(re.split(r'\s+', text)) if len(word) >= wordlen])
+    text = re.sub(r'[^a-z0-9]+', ' ', text.lower())
+    words = sorted([word for word in set(re.split(r'\s+', text))
+        if len(word) >= wordlen])
     bigrams = extract_bigrams(words)
     matches = find_matches(bigrams, minlen=minpairlen)
     print_matches(matches)
 
+USAGE = '''Reads text from stdin, and prints out anagrams.
+
+Usage: cat text | python anagrams.py [minimum word length] [minimum pair count]
+'''
 
 if __name__ == '__main__':
     kwargs = {}
     if len(sys.argv) > 1:
         argv1 = sys.argv[1].lower()
         if argv1 == '-h' or argv1 == '--help':
-            print "Reads text from stdin, and prints out anagrams.\n\n    Usage: cat text | python anagrams.py [minimum word length] [minimum pair count]"
+            print USAGE,
             sys.exit(1)
         kwargs['wordlen'] = int(argv1)
     if len(sys.argv) > 2:
