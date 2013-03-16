@@ -3,7 +3,7 @@ Anagram Finder
 
 short.txt == curl -sL http://thumb.tk/8Qdr
 
-medium.txt == curl -sL http://thumb.tk/8Pyn
+medium.txt == curl -sL http://thumb.tk/8PYN
 
 large.txt == curl -sL http://thumb.tk/8Qd3
 
