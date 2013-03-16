@@ -1,0 +1,36 @@
+Anagram Finder
+==============
+
+short.txt == curl -sL http://thumb.tk/8Qdr
+medium.txt == curl -sL http://thumb.tk/8Pyn
+large.txt == curl -sL http://thumb.tk/8Qd3
+
+Results from each run found in respective `.out` file.
+
+The python app supports two optional command-line arguments.
+
+`python anagrams.py [minimum word length] [minimum pair count]`
+
+**Minimum word length** is the minimum length per word that it will allow. As per
+the contest requirements, the default is 4.
+
+**Minimum pair count** is the minimum number of pairs an anagram match must
+contain to be displayed. The first two parts of the challenge simply require 2
+pairs or more, while the third part of the challenge requires 10 or more.
+
+
+```
+$ cat short.txt | python anagrams.py
+happy once, heap pycon
+```
+
+```
+$ cat medium.txt | python anagrams.py
+ropes tilted, steel tripod
+```
+
+```
+$ cat large.txt | python anagrams.py
+cart shoes, case short, cats horse, chose rats, coast hers, cost share, crash toes, cross hate, each sorts, reach toss
+earls those, heart soles, hearts lose, heels roast, hoarse lest, horse slate, later shoes, other seals, share stole, shore tales
+```
